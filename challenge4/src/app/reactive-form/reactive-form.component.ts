@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class ReactiveFormComponent {
 
+  userForm=new FormGroup({
+    name:new FormControl(''),
+    email:new FormControl(''),
+    payementInformations:new FormGroup({
+      typeCarte:new FormControl(''),
+      numero:new FormControl(''),
+      dateExpiration:new FormControl('')  ,
+      code:new FormControl('')    
+})
+  })
 }

@@ -50,7 +50,7 @@
                     </div>
                     <div *ngIf="numero!.invalid && numero!.touched">
                         <small *ngIf="numero!.errors?.['required']" class="text-danger">Le numéro de la carte est obligatoire</small>
-                        <small *ngIf="numero!.errors?.['minlength'] " class="text-danger">Le numéro de la carte doit avoir 16 caractères au minimum</small>        
+                        <small *ngIf="numero!.errors?.['pattern']" class="text-danger">Le numéro de la carte doit avoir 16 caractères </small>        
                     </div>
                     
                     

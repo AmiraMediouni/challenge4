@@ -20,13 +20,14 @@ export class FormBuilderComponent {
   get numero(){
     return this.userForm.get('payementInformations')?.get('numero')
   }
-  patternn="[a-z0-9]+\.[a-z0-9]+@[a-z0-9.-]+\.[a-z]{3}$"
+  pattern_email="[a-z0-9]+\.[a-z0-9]+@[a-z0-9.-]+\.[a-z]{3}$"
+  pattern_numero="[0-9]{16}"
     userForm=this.fb.group({
       name : ['' ,[Validators.required,Validators.minLength(3)]],
-      email : ['',[Validators.required, Validators.pattern(this.patternn)]],
+      email : ['',[Validators.required, Validators.pattern(this.pattern_email)]],
       payementInformations : this.fb.group({
         typeCarte: ['',[Validators.required]],
-        numero : ['',[Validators.required,Validators.minLength(16)]],
+        numero : ['',[Validators.required,Validators.pattern(this.pattern_numero)]],
         dateExpiration : [''],
         code : ['']
       })
